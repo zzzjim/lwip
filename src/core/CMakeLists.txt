@@ -21,7 +21,12 @@ target_include_directories(lwipcore
 )
 
 file(GLOB LWIP_PUBLIC_HEADERS "../include/lwip/*.h")
-set(LWIP_PUBLIC_HEADERS ${LWIP_PUBLIC_HEADERS} "${CMAKE_CURRENT_BINARY_DIR}/lwipopts.h")
+
+set(LWIP_PUBLIC_HEADERS
+	${LWIP_PUBLIC_HEADERS}
+	"${CMAKE_CURRENT_BINARY_DIR}/lwipopts.h"
+)
+
 set_target_properties(lwipcore PROPERTIES PUBLIC_HEADER "${LWIP_PUBLIC_HEADERS}")
 
 install(
@@ -31,3 +36,7 @@ install(
         PUBLIC_HEADER DESTINATION "include/lwip"
 )
 
+install(
+	DIRECTORY ${LWIP_PLATFORM_INCLUDES}/arch
+	DESTINATION "include/lwip"
+)
