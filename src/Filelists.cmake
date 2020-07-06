@@ -273,6 +273,7 @@ else (DOXYGEN_FOUND)
     message(STATUS "Doxygen needs to be installed to generate the doxygen documentation")
 endif (DOXYGEN_FOUND)
 
+if ( 0 )
 # lwIP libraries
 add_library(lwipcore EXCLUDE_FROM_ALL ${lwipnoapps_SRCS})
 target_compile_options(lwipcore PRIVATE ${LWIP_COMPILER_FLAGS})
@@ -288,3 +289,5 @@ add_library(lwipmbedtls EXCLUDE_FROM_ALL ${lwipmbedtls_SRCS})
 target_compile_options(lwipmbedtls PRIVATE ${LWIP_COMPILER_FLAGS})
 target_compile_definitions(lwipmbedtls PRIVATE ${LWIP_DEFINITIONS}  ${LWIP_MBEDTLS_DEFINITIONS})
 target_include_directories(lwipmbedtls PRIVATE ${LWIP_INCLUDE_DIRS} ${LWIP_MBEDTLS_INCLUDE_DIRS})
+endif()
+
