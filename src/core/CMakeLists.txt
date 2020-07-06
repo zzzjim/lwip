@@ -4,7 +4,7 @@
 configure_file("../../lwipopts.h.in" "${CMAKE_CURRENT_BINARY_DIR}/lwipopts.h")
 
 if ( UNIX )
-	set(LWIP_PLATFORM_INCLUDES "../../contrib/ports/unix/include/")
+	set(LWIP_PLATFORM_INCLUDES "../../contrib/ports/unix/port/include/")
 else()
 	set(LWIP_PLATFORM_INCLUDES "../../contrib/ports/win32/include/")
 endif()
