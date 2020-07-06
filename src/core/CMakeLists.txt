@@ -24,8 +24,6 @@ file(GLOB LWIP_PUBLIC_HEADERS "../include/lwip/*.h")
 list(APPEND ${LWIP_PUBLIC_HEADERS} "${CMAKE_CURRENT_BINARY_DIR}/lwipopts.h")
 set_target_properties(lwipcore PROPERTIES PUBLIC_HEADER "${LWIP_PUBLIC_HEADERS}")
 
-message("HEADERS: ${LWIP_PUBLIC_HEADERS}")
-
 install(
         TARGETS lwipcore
         EXPORT lwipTargets
