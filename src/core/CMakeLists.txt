@@ -11,7 +11,7 @@ else()
 	set(LWIP_EXTRA_SRS "../../contrib/ports/win32/sys_arch.c")
 endif()
 
-add_library(lwipcore STATIC ${lwipnoapps_SRCS} ${LWIP_EXTRA_SRS})
+add_library(lwipcore STATIC ${lwipcore_SRCS} ${LWIP_EXTRA_SRS})
 target_compile_options(lwipcore PRIVATE ${LWIP_COMPILER_FLAGS})
 target_compile_definitions(lwipcore PRIVATE ${LWIP_DEFINITIONS} ${LWIP_MBEDTLS_DEFINITIONS})
 target_include_directories(lwipcore
