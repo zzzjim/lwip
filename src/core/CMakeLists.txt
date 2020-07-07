@@ -5,11 +5,13 @@ configure_file("../../lwipopts.h.in" "${CMAKE_CURRENT_BINARY_DIR}/lwipopts.h")
 
 if ( UNIX )
 	set(LWIP_PLATFORM_INCLUDES "../../contrib/ports/unix/port/include/")
+	set(LWIP_EXTRA_SRS "../../contrib/ports/unix/port/sys_arch.c")
 else()
 	set(LWIP_PLATFORM_INCLUDES "../../contrib/ports/win32/include/")
+	set(LWIP_EXTRA_SRS "../../contrib/ports/win32/sys_arch.c")
 endif()
 
-add_library(lwipcore STATIC ${lwipnoapps_SRCS})
+add_library(lwipcore STATIC ${lwipnoapps_SRCS} ${LWIP_EXTRA_SRS})
 target_compile_options(lwipcore PRIVATE ${LWIP_COMPILER_FLAGS})
 target_compile_definitions(lwipcore PRIVATE ${LWIP_DEFINITIONS} ${LWIP_MBEDTLS_DEFINITIONS})
 target_include_directories(lwipcore
