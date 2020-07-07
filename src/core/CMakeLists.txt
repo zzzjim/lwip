@@ -49,3 +49,8 @@ install(
 	DIRECTORY ${LWIP_PLATFORM_INCLUDES}/arch
 	DESTINATION "include/lwip"
 )
+
+install(
+	DIRECTORY "../include/lwip/priv"
+	DESTINATION "include/lwip"
+)
