@@ -54,3 +54,8 @@ install(
 	DIRECTORY "../include/lwip/priv"
 	DESTINATION "include/lwip"
 )
+
+install(
+	DIRECTORY "../include/lwip/prot"
+	DESTINATION "include/lwip"
+)
